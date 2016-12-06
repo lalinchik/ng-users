@@ -1,0 +1,18 @@
+<table class="user-table">
+    <tr class="user-table-header">
+        <td>#</td>
+        <td>Avatar</td>
+        <td>Name</td>
+        <td>Gender</td>
+        <td>Nat</td>
+    </tr>
+    <tr ng-repeat="user in ctrl.users">
+        <td>{{ $index + 1 }}</td>
+        <td>
+            <img class="avatar" ng-src="{{ user.picture.thumbnail }}">
+        </td>
+        <td>{{ user.name.title }} {{ user.name.first }} {{ user.name.last }}</td>
+        <td>{{ user.gender }}</td>
+        <td>{{ user.nat }}</td>
+    </tr>
+</table>

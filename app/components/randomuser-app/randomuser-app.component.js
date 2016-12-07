@@ -3,6 +3,5 @@
 angular.module('randomuserApp')
     .component('randomuserApp', {
         templateUrl: 'components/randomuser-app/randomuser-app.tmpl.html',
-        controller: RandomuserAppController,
-        controllerAs: 'ctrl'
+        controller: RandomuserAppController
     });

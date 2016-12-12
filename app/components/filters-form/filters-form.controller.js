@@ -1,4 +1,4 @@
-function UserFiltersFormController($injector) {
+function FiltersFormController($injector) {
     this.nationalityConst = $injector.get('nationalityConst');
     this.gender = 'female';
 

@@ -1,4 +1,4 @@
 angular.module('randomuserApp', [
-    'userFiltersForm',
+    'filtersForm',
     'userTable'
 ]);

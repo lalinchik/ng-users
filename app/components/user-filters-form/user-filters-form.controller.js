@@ -1,6 +1,8 @@
-function UserFiltersFormController() {
-    this.genderSelect = 'Female';
+function UserFiltersFormController($injector) {
+    this.nationalityConst = $injector.get('nationalityConst');
+    this.gender = 'female';
 
-    console.log(this.aaa);
-    this.submit = () => this.aaa();
+    this.submit = () => {
+        this.filtersApply({filters: {gender: this.gender, nat: this.nat}});
+    };
 }

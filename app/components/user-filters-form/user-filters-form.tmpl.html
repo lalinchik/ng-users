@@ -1,8 +1,12 @@
 <form name="filterForm">
     <label for="filterGender">Gender:</label>
-    <select name="filterGender" ng-model="$ctrl.genderSelect" id="filterGender">
-        <option value="Female">Female</option>
-        <option value="Male">Male</option>
+    <select name="filterGender" ng-model="$ctrl.gender" id="filterGender">
+        <option value="female">female</option>
+        <option value="male">male</option>
+    </select>
+
+    <select ng-model="$ctrl.nat"
+            ng-options="nat for nat in $ctrl.nationalityConst" multiple>
     </select>
     <button ng-click="$ctrl.submit()">Apply filters</button>
 </form>

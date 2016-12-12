@@ -1,5 +1,5 @@
 function RandomuserAppController(UserTableService) {
-    UserTableService.fetchUsers({gender: 'female', nat: 'us,dk,fr'})
+    UserTableService.fetchUsers({limit: 10})
         .then(users => this.users = users);
 
     this.onFiltersApply = function (filters) {

@@ -1,0 +1,6 @@
+<label> Records per page
+    <select ng-model="$ctrl.limit"
+            ng-options="number for number in $ctrl.paginationListConst"
+            ng-change="$ctrl.selectNumber($ctrl.limit)">
+    </select>
+</label>

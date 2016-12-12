@@ -6,4 +6,9 @@ function RandomuserAppController(UserTableService) {
         UserTableService.fetchUsers(filters)
             .then(users => this.users = users);
     };
+
+    this.onPagination = function (limit) {
+        UserTableService.fetchUsers({limit: limit})
+            .then(users => this.users = users)
+    }
 }

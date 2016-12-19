@@ -1,14 +1,22 @@
 function RandomuserAppController(UserTableService) {
-    UserTableService.fetchUsers({limit: 10})
+    UserTableService.fetchUsers()
         .then(users => this.users = users);
 
     this.onFiltersApply = function (filters) {
-        UserTableService.fetchUsers(filters)
+        UserTableService.setFilters(filters);
+        UserTableService.fetchUsers()
             .then(users => this.users = users);
     };
 
-    this.onPagination = function (limit) {
-        UserTableService.fetchUsers({limit: limit})
-            .then(users => this.users = users)
-    }
+    this.onPageChange = function (page) {
+        UserTableService.setPage(page);
+        UserTableService.fetchUsers()
+            .then(users => this.users = users);
+    };
+
+    this.onLimitChange = function (limit) {
+        UserTableService.setLimit(limit);
+        UserTableService.fetchUsers()
+            .then(users => this.users = users);
+    };
 }

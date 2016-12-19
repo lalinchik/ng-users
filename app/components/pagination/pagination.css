@@ -1,0 +1,10 @@
+.pagination-container > * {
+    display: inline-block;
+}
+
+
+.pagination-list li{
+    display: inline-block;
+    list-style: none;
+    padding: 5px;
+}

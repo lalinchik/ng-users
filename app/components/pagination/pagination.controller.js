@@ -2,6 +2,7 @@ function PaginationController($injector, UserTableService) {
     this.limitOptions = $injector.get('limitOptions');
     this.currentPage = 1;
     this.pages = Array.from({length: 5}).map((item, index) => index + 1);
+    this.limit = UserTableService.getLimit();
 
 
     this.setLimit = (limit) => {

@@ -10,10 +10,11 @@ angular.module('userTable').factory('UserTableService', function ($http) {
 
     return {
         fetchUsers: () => {
-            let url = `https://randomuser.me/api/?page=${state.page}&results=${state.limit}&seed=abc`;
-            for (let key of Object.keys(state.filters)) {
+            let url = `https://randomuser.me/api/?page=${state.page}&results=${state.limit}`;
+            for (let key of Object.keys(state.filters)) { //TODO: rewrite for with Array#reduce
                 url += `&${key}=${state.filters[key]}`;
             }
+
             return $http.get(url)
                 .then(response => response.data.results);
         },
@@ -30,6 +31,10 @@ angular.module('userTable').factory('UserTableService', function ($http) {
 
         setPage: (page) => {
             state.page = page;
+        },
+
+        getLimit: () => {
+            return state.limit;
         }
     }
 });

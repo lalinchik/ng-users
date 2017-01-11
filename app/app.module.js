@@ -1,5 +1,6 @@
 'use strict';
 
 const myApp = angular.module('myApp', [
-    'randomuserApp'
+    'randomuserApp',
+    'myDirect'
 ]);

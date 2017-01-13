@@ -16,3 +16,11 @@
         <td>{{ user.nat }}</td>
     </tr>
 </table>
+
+<button ng-click="$ctrl.openPopup()">Button</button>
+<div ng-show="$ctrl.isPopupShow" class="popup-wrapper">
+    <div ng-repeat="column in $ctrl.columnList" class="item">
+        <input type="checkbox">
+        <p>{{column}}</p>
+    </div>
+</div>

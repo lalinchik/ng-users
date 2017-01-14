@@ -1,26 +1,27 @@
 <table class="user-table">
     <tr class="user-table-header">
         <td>#</td>
-        <td>Avatar</td>
-        <td>Name</td>
-        <td>Gender</td>
-        <td>Nat</td>
+        <td ng-hide="$ctrl.isAvatarColumnHide">Avatar</td>
+        <td ng-hide="$ctrl.isNameColumnHide">Name</td>
+        <td ng-hide="$ctrl.isGenderColumnHide">Gender</td>
+        <td ng-hide="$ctrl.isNatColumnHide">Nat</td>
     </tr>
     <tr ng-repeat="user in $ctrl.users track by $index">
         <td>{{ $index + 1 }}</td>
-        <td>
+        <td ng-hide="$ctrl.isAvatarColumnHide">
             <img class="avatar" ng-src="{{ user.picture.thumbnail }}">
         </td>
-        <td>{{ user.name.title }} {{ user.name.first }} {{ user.name.last }}</td>
-        <td>{{ user.gender }}</td>
-        <td>{{ user.nat }}</td>
+        <td ng-hide="$ctrl.isNameColumnHide">{{ user.name.title }} {{ user.name.first }} {{ user.name.last }}</td>
+        <td ng-hide="$ctrl.isGenderColumnHide">{{ user.gender }}</td>
+        <td ng-hide="$ctrl.isNatColumnHide">{{ user.nat }}</td>
     </tr>
 </table>
 
 <button ng-click="$ctrl.openPopup()">Button</button>
 <div ng-show="$ctrl.isPopupShow" class="popup-wrapper">
     <div ng-repeat="column in $ctrl.columnList" class="item">
-        <input type="checkbox">
+        <input  ng-model="($column)"
+                ng-change="$ctrl.toggleColumn(column)" type="checkbox">
         <p>{{column}}</p>
     </div>
 </div>

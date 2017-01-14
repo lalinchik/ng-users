@@ -3,12 +3,6 @@ function UserTableController() {
   this.columnList = ['Avatar', 'Name', 'Gender', 'Nat'];
 
   this.openPopup = function () {
-    if (this.isPopupShow) {
-      this.isPopupShow = false;
-    } else {
-      this.isPopupShow = true;
-    }
-
-    console.log(this.isPopupShow);
+    this.isPopupShow = !this.isPopupShow;
   }
 }

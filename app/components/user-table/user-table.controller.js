@@ -1,6 +1,6 @@
 function UserTableController(UserTableService) {
   this.isPopupShow = false;
-  this.columnList = ['Avatar', 'Name', 'Gender', 'Nat'];
+  this.columnList = ['Avatar', 'Name', 'Gender', 'Nat', 'Email'];
 
   this.openPopup = function () {
     this.isPopupShow = !this.isPopupShow;
@@ -15,6 +15,8 @@ function UserTableController(UserTableService) {
         this.isGenderColumnHide = !this.isGenderColumnHide;
       } else if (columnName === 'Nat') {
         this.isNatColumnHide = !this.isNatColumnHide;
+      } else if (columnName === 'Email') {
+        this.isEmailColumnHide = !this.isEmailColumnHide;
       }
   }
 }

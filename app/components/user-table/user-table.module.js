@@ -1,1 +1,1 @@
-angular.module('userTable', []);
+angular.module('userTable', ['ngSanitize']);

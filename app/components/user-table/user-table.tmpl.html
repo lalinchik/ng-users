@@ -1,9 +1,9 @@
-<table class="user-table">
+<table class="user-table responstable">
     <tr class="user-table-header">
-        <td>#</td>
-        <td ng-repeat="column in $ctrl.columnList"
+        <th>#</th>
+        <th ng-repeat="column in $ctrl.columnList"
             ng-hide="column.hidden">{{column.title}}
-        </td>
+        </th>
     </tr>
     <tr ng-repeat="user in $ctrl.users track by $index">
         <td>{{$index + 1}}</td>

@@ -1,22 +1,25 @@
 <div class="pagination-container">
-    <label> Records per page
-        <select ng-model="$ctrl.limit"
-                ng-options="number for number in $ctrl.limitOptions"
-                ng-change="$ctrl.setLimit($ctrl.limit)">
-        </select>
-    </label>
+    <div class="menu">
+        <span>Records per page</span>
+        <ul>
+            <li ng-repeat="number in $ctrl.limitOptions"
+                ng-click="$ctrl.setLimit(number)">{{number}}
+            </li>
+        </ul>
+    </div>
 
     <ul class="pagination-list">
-        <li class="prev">
-            <a ng-click="$ctrl.prev()"><<</a>
+        <li class="prev button">
+            <a ng-click="$ctrl.prev()"></a>
         </li>
         <li ng-repeat="page in $ctrl.pages track by $index">
             <a ng-if="page !== $ctrl.currentPage"
                ng-click="$ctrl.setPage(page)">{{page}}</a>
-            <span ng-if="page === $ctrl.currentPage">{{page}}</span>
+            <span ng-if="page === $ctrl.currentPage"
+                  ng-class="{active: $ctrl.isActive(page)}">{{page}}</span>
         </li>
-        <li class="next">
-            <a ng-click="$ctrl.next()">>></a>
+        <li class="next button">
+            <a ng-click="$ctrl.next()"></a>
         </li>
     </ul>
 </div>

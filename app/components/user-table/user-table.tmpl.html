@@ -1,24 +1,27 @@
-<table class="user-table responstable">
-    <tr class="user-table-header">
-        <th>#</th>
-        <th ng-repeat="column in $ctrl.columnList"
-            ng-hide="column.hidden">{{column.title}}
-        </th>
-    </tr>
-    <tr ng-repeat="user in $ctrl.users track by $index">
-        <td>{{$index + 1}}</td>
-        <td ng-repeat="column in $ctrl.columnList"
-            ng-hide="column.hidden"
-            ng-bind-html="column.renderer(user)">
-        </td>
-    </tr>
-</table>
+<div class="table-wrapper">
+    <table class="user-table responstable">
+        <tr class="user-table-header">
+            <th>#</th>
+            <th ng-repeat="column in $ctrl.columnList"
+                ng-hide="column.hidden">{{column.title}}
+            </th>
+        </tr>
+        <tr ng-repeat="user in $ctrl.users track by $index">
+            <td>{{$index + 1}}</td>
+            <td ng-repeat="column in $ctrl.columnList"
+                ng-hide="column.hidden"
+                ng-bind-html="column.renderer(user)">
+            </td>
+        </tr>
+    </table>
 
-<button ng-click="$ctrl.openPopup()">Button</button>
-<div ng-show="$ctrl.isPopupShow" class="popup-wrapper">
-    <div ng-repeat="column in $ctrl.columnList" class="item">
-        <input ng-model="($column)"
-               ng-change="$ctrl.toggleColumn(column.title)" type="checkbox">
-        <p>{{column.title}}</p>
+    <button class="btn"
+            ng-click="$ctrl.openPopup()"><i class="icon icon-cog" aria-hidden="true"></i></button>
+    <div ng-show="$ctrl.isPopupShow" class="popup-wrapper">
+        <div ng-repeat="column in $ctrl.columnList" class="item">
+            <input ng-model="($column)"
+                   ng-change="$ctrl.toggleColumn(column.title)" type="checkbox">
+            <p>{{column.title}}</p>
+        </div>
     </div>
 </div>

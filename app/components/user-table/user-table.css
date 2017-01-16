@@ -1,10 +1,30 @@
+.table-wrapper {
+    position: relative;
+}
+
+.btn {
+    position: absolute;
+    top: 1px;
+    right: 0;
+    background-color: rgba(37, 166, 189, 0.74);
+    border: 1px solid #1b4d56;
+    color: white;
+}
+
+.btn:hover {
+    background-color: #1b4d56;
+}
+
+.btn:focus {
+    outline: none;
+}
+
 .responstable {
     margin: 4px;
     width: 100%;
     overflow: hidden;
     background: #FFF;
     color: #024457;
-    border-radius: 10px;
     border: 1px solid #167F92;
 }
 
@@ -33,23 +53,24 @@
     overflow: hidden;
     text-overflow: ellipsis;
     text-transform: capitalize;
+    height: 40px;
 }
 
 .popup-wrapper {
-    width: 400px;
+    width: 260px;
     position: absolute;
-    top: 25%;
-    left: calc(50% - 200px);
-    border-radius: 5px;
+    top: 33px;
+    right: 0;
     background: white;
     border: 1px solid black;
-    box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .item {
     display: flex;
     align-items: center;
     border-bottom: 1px solid #f1f1f1;
+    /*max-height: 40px;*/
+    line-height: 1;
 }
 
 .item:last-child {

@@ -1,6 +1,8 @@
 <div class="pagination-container">
     <div class="menu">
-        <span>Records per page</span>
+        <span>{{$ctrl.numberPerPage}} per page
+        <i class="icon icon-down-dir"></i>
+        </span>
         <ul>
             <li ng-repeat="number in $ctrl.limitOptions"
                 ng-click="$ctrl.setLimit(number)">{{number}}

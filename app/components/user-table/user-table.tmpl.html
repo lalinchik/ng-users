@@ -16,7 +16,9 @@
     </table>
 
     <button class="btn"
-            ng-click="$ctrl.openPopup()"><i class="icon icon-cog" aria-hidden="true"></i></button>
+            ng-click="$ctrl.openPopup()">
+        <i class="icon icon-cog"></i>
+    </button>
     <div ng-show="$ctrl.isPopupShow" class="popup-wrapper">
         <div ng-repeat="column in $ctrl.columnList" class="item">
             <input ng-model="($column)"

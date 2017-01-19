@@ -4,9 +4,9 @@
             <th>#</th>
             <th ng-repeat="column in $ctrl.columnList"
                 ng-hide="column.hidden">{{column.title}}
-                <span class="icons" ng-show="column.sortable">
-                    <i class="icon icon-up-open"></i>
-                    <i class="icon icon-down-open"></i>
+                <span class="icons" ng-if="column.sortable">
+                    <i class="icon icon-up-open" ng-click="$ctrl.sort(column, 'asc')"></i>
+                    <i class="icon icon-down-open" ng-click="$ctrl.sort(column, 'desc')"></i>
                 </span>
             </th>
         </tr>

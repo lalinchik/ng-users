@@ -67,6 +67,7 @@
 .responstable [class*="icon-"]:before {
     margin: 0;
     line-height: 11px;
+    cursor: pointer;
 }
 
 .popup-wrapper {
